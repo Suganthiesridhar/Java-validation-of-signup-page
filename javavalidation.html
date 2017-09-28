@@ -1,0 +1,292 @@
+<html>
+<head>
+  <title>wishlistr</title>
+  <style type="text/css">
+  label {
+  	float: left;
+  	width: 175px;
+  	text-align: right;
+  	padding-right: 12px;
+  	margin-top: 12px;
+  	clear: left;
+  }
+
+  input {
+  	margin-top: 12px;
+  }
+
+  #b1 {
+  	margin-left: 175px;
+  	background-color: #BOEOE6;
+  	button-shape: round;
+  	  }
+
+    ul {
+  	background-color: #404b54;
+  	color: white;
+  } 
+  h1 {
+  	font-size: 25;
+  	font-family: courier;
+  	background-color: #483D8B;
+  	padding: 30px;
+  	color: gray;
+   }
+  
+  h2{
+  	background-color: #ADFF2F;
+  	color: white;
+  	font-weight: normal;
+  	font-family: Arial;
+  	padding: 10px;
+  	font-size: 20;
+  }
+  h3{
+   color: #483D8B ;
+  }
+  h5{
+  	color:#ADFF2F;
+    font-size: 17;
+  }
+  h4{
+  	color:#ADFF2F;
+  	font-size: 17;
+  }
+  p{
+  	float: right;
+  	padding-right: 590px;
+
+  }
+  ul{
+  	text-align: right;
+  	word-spacing: 20px;
+  }
+  li1,li2{
+  	list-style-type: none;
+  	display: inline-block;
+  	font-size: 20;
+  	font-weight: bold;
+  	font-family: courier;
+  	letter-spacing: 1px;
+  }
+  li3{
+  	list-style-type: none;
+  	display: inline-block;
+  	font-size: 20;
+  	font-weight: bold;
+  	font-family: courier;
+  	letter-spacing: 1px;
+  	color: gray;
+  }
+  li4{
+  	list-style-type: none;
+  	display: inline-block;
+  	font-size: 15;
+  	font-weight: bold;
+  	font-family: courier;
+  	letter-spacing: 1px;
+  	color:red;
+  	  }
+ .wishlist{
+ 	color: #483D8B;
+ 	font-size: 20;
+ }
+    </style>
+ </head>
+<body>
+  <div style="float:left;">
+	  	<div id="h1">
+	  <img src="wishlistr.GIF"/>
+	  <p1>let the world know what you desire<p1>
+	  </div>
+
+	  <div id="list">
+	    <ul>
+	    <li1> Home</li1>
+	    <li2> Login</li2>
+	    <li3> Signup</li3>
+	    <li4> <sup>Free!</sup></li4>
+	    </ul>
+	  </div> 
+  </div>
+  	<div style="clear:both;"></div>
+  <div id="h2">
+    <h2>Signup</h2>
+    <h3 class="wishlist">Create a Wishlistr Account</h3>
+  </div> 
+
+  <div id="h3">
+    <p>Have an open ID ? skip this step and <a href="login.html">login directly</a> </p>
+  </div>
+
+   <div id="h5">
+     <h5>Step1:Your Details</h5>
+   </div>
+
+<!-- form -->
+ <form name="register" method="post" action="sign.html" onSubmit="return validate()">  
+<!-- form -->
+
+
+   <div id="l1">
+   <div>
+   <label for="myName">NAME:</label>
+<input type="text" name="name" id="name">
+   </div>
+    <br><br>
+    <hr>
+   
+  <td><LABEL for="email">Email:<sup style="color:red;">*</sup> </LABEL></td>
+  <td><input type="text" name="email" id="email"></td>
+
+
+
+   <br><br>
+   <hr color="#00FFF">
+   
+   <div id="h4">
+     <h4>Step 2: Pick a username and a password for your account</h4>
+   </div>  
+
+ <div id="l2">
+   <div>
+   <label for="userName">USERNAME:</label>
+<input type="text" name="username" id="username">
+   <p>your user name may contain letters,<br>numbers,underscores and spaces.will be <br>used in your wishlistr url.</p>
+   </div>
+<br><br>
+<br><br>
+<hr>
+<div>
+   <label for="password">PASSWORD:</label>
+<input type="password" name="password" id="password">
+   <p>Your password must be at least 3 <br>characters long. Space are not allowed.</p>
+   </div>
+<br><br>
+<hr>
+   <div>
+   <label for="Confirmpassword">CONFIRM PASSWORD:</label>
+<input type="password" name="cpassword" id="cpassword">  
+ <p>Just to make sure you entered it correctly</p>
+   </div>
+<br><br>
+   <hr color="#00FFF" width="100%" display="block">
+   <div id=b1>
+  <td colspan="2" align="center"><input type="submit" name="submit" id="submit" value="SIGN UP"></td>  
+
+ <p>Click the button and you're done!</p>
+   </div>
+   </form>
+ <script type="text/javascript">  
+ function validate()  
+ {  
+      var d=document.register;  
+      var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;  
+      if(d.name.value == '')  
+      {  
+           alert("Enter Name"); 
+                   document.getElementById('name').style.backgroundColor = "red";
+ 
+           d.name.focus();  
+           return false;  
+         }
+           else{
+            document.getElementById('name').style.backgroundColor = "white";
+ 
+           }
+       
+      if(d.name.value.length<=2)  
+      {  
+      alert("Minimum Name Should be greater than two");  
+      document.getElementById('name').style.backgroundColor = "red";
+
+      return false;       
+      }  
+      else{
+            document.getElementById('name').style.backgroundColor = "white";
+ 
+           }
+ 
+      if(d.email.value == '')  
+      {  
+      document.getElementById('email').style.backgroundColor = "red";
+
+      alert("Email is is Required");  
+      d.email.focus();  
+      return false;       
+      }  
+      else{
+            document.getElementById('email').style.backgroundColor = "white";
+ 
+           }
+      if(reg.test(d.email.value) == false)  
+      {  
+      alert("Invalid Email"); 
+      document.getElementById('email').style.backgroundColor = "red";
+ 
+      return false;       
+      } 
+      else{
+            document.getElementById('email').style.backgroundColor = "white";
+ 
+           }
+    
+
+  if(d.username.value == '')  
+      {  
+           alert("Enter username");  
+          document.getElementById('username').style.backgroundColor = "red";
+
+           return false;  
+      }  
+      else{
+            document.getElementById('username').style.backgroundColor = "white";
+ 
+           }
+      if(d.username.value.length<=4)  
+      {  
+      alert("Minimum username Should be greater than four");  
+       document.getElementById('username').style.backgroundColor = "red";
+
+      return false;       
+      } 
+      else{
+            document.getElementById('username').style.backgroundColor = "white";
+ 
+           }
+
+
+  /**/
+
+
+      if(d.password.value == '')  
+      { 
+      document.getElementById('password').style.backgroundColor = "red";
+ 
+      alert("Password is is Required");  
+      d.password.focus();  
+      return false;       
+      }  
+      else{
+            document.getElementById('password').style.backgroundColor = "white";
+ 
+           }
+      if(d.password.value != d.cpassword.value)  
+      {  
+      document.getElementById('password').style.backgroundColor = "red";
+
+      alert("Passwords Mismatch")  
+      return false;       
+      }  
+      else{
+            document.getElementById('password').style.backgroundColor = "white";
+ 
+           }
+  
+ }  
+ </script> 
+
+   </body>
+</html>
+
+    
